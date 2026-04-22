@@ -1,0 +1,175 @@
+/* ==========================================================================
+   FORM COMPONENT
+   ========================================================================== */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ------------------------------------------------------------------
+   Form group (field wrapper)
+------------------------------------------------------------------ */
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form__group--inline {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ------------------------------------------------------------------
+   Label
+------------------------------------------------------------------ */
+
+.form__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-tight);
+}
+
+.form__label--inline {
+  font-weight: var(--font-weight-regular);
+}
+
+.form__required {
+  color: var(--color-error);
+  margin-left: var(--space-1);
+}
+
+/* ------------------------------------------------------------------
+   Shared input styles
+------------------------------------------------------------------ */
+
+.form__input,
+.form__select,
+.form__textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-neutral-0);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow   var(--transition-fast);
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+  color: var(--color-text-disabled);
+}
+
+/* Focus */
+.form__input:focus,
+.form__select:focus,
+.form__textarea:focus {
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px var(--color-primary-100, rgba(0,0,0,.08));
+}
+
+/* Error state */
+.form__input--error,
+.form__select--error,
+.form__textarea--error {
+  border-color: var(--color-error);
+}
+
+.form__input--error:focus,
+.form__select--error:focus,
+.form__textarea--error:focus {
+  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.12);
+}
+
+/* Disabled */
+.form__input:disabled,
+.form__select:disabled,
+.form__textarea:disabled {
+  background-color: var(--color-neutral-100);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* ------------------------------------------------------------------
+   Textarea
+------------------------------------------------------------------ */
+
+.form__textarea {
+  resize: vertical;
+  min-height: 8rem;
+  line-height: var(--line-height-relaxed);
+}
+
+/* ------------------------------------------------------------------
+   Select wrapper (custom arrow)
+------------------------------------------------------------------ */
+
+.form__select-wrapper {
+  position: relative;
+}
+
+.form__select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--color-text-secondary);
+  pointer-events: none;
+}
+
+.form__select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: var(--space-10);
+}
+
+/* ------------------------------------------------------------------
+   Checkbox
+------------------------------------------------------------------ */
+
+.form__checkbox {
+  flex-shrink: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  accent-color: var(--color-primary-500);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+
+/* ------------------------------------------------------------------
+   Helper / hint / error text
+------------------------------------------------------------------ */
+
+.form__hint {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.form__error {
+  font-size: var(--font-size-xs);
+  color: var(--color-error);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ------------------------------------------------------------------
+   Actions row
+------------------------------------------------------------------ */
+
+.form__actions {
+  margin-top: var(--space-2);
+}

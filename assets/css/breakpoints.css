@@ -1,0 +1,52 @@
+/* ==========================================================================
+   BREAKPOINTS
+   Mobile-first responsive system.
+
+   Usage (always write mobile styles first, then layer up):
+
+     .my-element {
+       font-size: var(--font-size-base);   ← mobile default
+     }
+
+     @media (min-width: 640px)  { ... }    ← sm  — large phones / small tablets
+     @media (min-width: 768px)  { ... }    ← md  — tablets
+     @media (min-width: 1024px) { ... }    ← lg  — small desktops / landscape tablets
+     @media (min-width: 1280px) { ... }    ← xl  — desktops
+     @media (min-width: 1536px) { ... }    ← 2xl — wide screens
+
+   Breakpoint tokens are also available as CSS custom properties (read-only
+   reference; media queries cannot use var(), so the values are duplicated).
+   ========================================================================== */
+
+:root {
+  --bp-sm:  640px;
+  --bp-md:  768px;
+  --bp-lg:  1024px;
+  --bp-xl:  1280px;
+  --bp-2xl: 1536px;
+}
+
+/* ------------------------------------------------------------------
+   Responsive utilities
+   Show / hide elements per breakpoint.
+------------------------------------------------------------------ */
+
+/* Hidden below sm */
+.hide-below-sm  { display: none; }
+@media (min-width: 640px)  { .hide-below-sm  { display: revert; } }
+
+/* Hidden below md */
+.hide-below-md  { display: none; }
+@media (min-width: 768px)  { .hide-below-md  { display: revert; } }
+
+/* Hidden below lg */
+.hide-below-lg  { display: none; }
+@media (min-width: 1024px) { .hide-below-lg  { display: revert; } }
+
+/* Hidden at md and above */
+.hide-from-md   { display: revert; }
+@media (min-width: 768px)  { .hide-from-md   { display: none; } }
+
+/* Hidden at lg and above */
+.hide-from-lg   { display: revert; }
+@media (min-width: 1024px) { .hide-from-lg   { display: none; } }

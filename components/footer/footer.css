@@ -1,0 +1,122 @@
+/* ==========================================================================
+   FOOTER COMPONENT
+   ========================================================================== */
+
+.footer {
+  background-color: var(--color-neutral-900);
+  color: var(--color-text-inverse);
+  padding-top: var(--space-16);
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+}
+
+/* Brand */
+.footer__logo {
+  display: inline-block;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-0);
+  margin-bottom: var(--space-3);
+}
+
+.footer__tagline {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-400);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Nav groups */
+.footer__nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+}
+
+.footer__nav-heading {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-0);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.footer__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+}
+
+.footer__nav-link {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-400);
+  transition: color var(--transition-fast);
+}
+
+.footer__nav-link:hover {
+  color: var(--color-neutral-0);
+}
+
+/* Social */
+.footer__social {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-10);
+  height: var(--space-10);
+  border-radius: var(--radius-full);
+  background-color: var(--color-neutral-800);
+  color: var(--color-neutral-400);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.footer__social-link:hover {
+  background-color: var(--color-primary-500);
+  color: var(--color-neutral-0);
+}
+
+/* Bottom bar */
+.footer__bottom {
+  margin-top: var(--space-12);
+  border-top: 1px solid var(--color-neutral-800);
+  padding-block: var(--space-6);
+}
+
+.footer__copyright {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-500);
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------
+   Breakpoints
+------------------------------------------------------------------ */
+
+@media (min-width: 768px) {
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer__inner {
+    grid-template-columns: 2fr 2fr 1fr;
+    align-items: start;
+  }
+
+  .footer__copyright {
+    text-align: left;
+  }
+}

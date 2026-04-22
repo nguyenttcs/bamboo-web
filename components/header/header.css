@@ -1,0 +1,291 @@
+/* ==========================================================================
+   HEADER COMPONENT
+   Fixed transparent over hero, transitions to solid on scroll.
+   BEM: .header, .header__inner, .header__logo, .header__nav, etc.
+   ========================================================================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-sticky);
+  height: 80px;
+  background: transparent;
+  transition: background var(--transition-base), box-shadow var(--transition-base);
+}
+
+/* On mobile, show solid header from the start (hamburger menu always accessible) */
+@media (max-width: 1023px) {
+  .header {
+    height: 64px;
+    background: #041a6c;
+  }
+}
+
+/* Solid state — added by JS when scrolled past hero */
+.header--solid {
+  background: #041a6c;
+  box-shadow: 0 2px 16px rgba(4, 26, 108, 0.4);
+}
+
+/* Inner layout */
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  height: 100%;
+  max-width: 1344px;
+  margin-inline: auto;
+  padding-inline: var(--space-8);
+}
+
+/* ------------------------------------------------------------------
+   Logo
+------------------------------------------------------------------ */
+
+.header__brand {
+  flex-shrink: 0;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+/* ------------------------------------------------------------------
+   Navigation
+------------------------------------------------------------------ */
+
+.header__nav {
+  display: none;
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__nav-link {
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #fefefe;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity var(--transition-fast);
+}
+
+.header__nav-link:hover {
+  color: #fefefe;
+  opacity: 0.75;
+}
+
+/* ------------------------------------------------------------------
+   Right-side actions
+------------------------------------------------------------------ */
+
+.header__actions {
+  display: none;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Search button */
+.header__search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #fefefe;
+  border-radius: 24px;
+  background: transparent;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.header__search:hover {
+  opacity: 0.75;
+}
+
+.header__search-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* Login button */
+.header__login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 32px;
+  background: #fefefe;
+  border-radius: 24px;
+  border: none;
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  color: #21273d;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.header__login:hover {
+  opacity: 0.9;
+}
+
+/* Language toggle */
+.header__lang {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cfd0d7;
+  border-radius: 24px;
+  padding: 2px;
+  flex-shrink: 0;
+}
+
+.header__lang-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  background: transparent;
+  border: none;
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  color: rgba(254, 254, 254, 0.7);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.header__lang-btn--active {
+  background: #fefefe;
+  color: #21273d;
+}
+
+/* ------------------------------------------------------------------
+   Mobile menu toggle
+------------------------------------------------------------------ */
+
+.header__menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: var(--space-8);
+  height: var(--space-8);
+  padding: var(--space-1);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header__hamburger,
+.header__hamburger::before,
+.header__hamburger::after {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fefefe;
+  border-radius: var(--radius-full);
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.header__hamburger {
+  position: relative;
+}
+
+.header__hamburger::before,
+.header__hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.header__hamburger::before { top: -6px; }
+.header__hamburger::after  { top:  6px; }
+
+.header__menu-toggle[aria-expanded="true"] .header__hamburger {
+  background-color: transparent;
+}
+
+.header__menu-toggle[aria-expanded="true"] .header__hamburger::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.header__menu-toggle[aria-expanded="true"] .header__hamburger::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ------------------------------------------------------------------
+   Mobile nav panel
+------------------------------------------------------------------ */
+
+.header__nav--open {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #041a6c;
+  border-bottom: 1px solid rgba(172, 206, 255, 0.3);
+  padding: var(--space-4) 0;
+  box-shadow: var(--shadow-md);
+}
+
+.header__nav--open .header__nav-list {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding-inline: var(--space-6);
+}
+
+.header__nav--open .header__nav-link {
+  display: block;
+  padding-block: var(--space-3);
+  font-size: var(--font-size-base);
+  width: 100%;
+}
+
+/* ------------------------------------------------------------------
+   Breakpoints
+------------------------------------------------------------------ */
+
+@media (min-width: 1024px) {
+  .header__nav {
+    display: block;
+  }
+
+  .header__actions {
+    display: flex;
+  }
+
+  .header__menu-toggle {
+    display: none;
+  }
+}

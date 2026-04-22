@@ -1,0 +1,50 @@
+<!-- ==========================================================================
+     HEADER COMPONENT
+     Reusable site header with navigation and mobile menu toggle.
+     Include via JS injection or copy into each page.
+     ========================================================================== -->
+<header class="header" role="banner">
+  <div class="container header__inner">
+
+    <!-- Brand / Logo -->
+    <a href="/" class="header__brand" aria-label="Home">
+      <!-- Replace with <img> or SVG once design is provided -->
+      <span class="header__logo-text">Brand</span>
+    </a>
+
+    <!-- Primary navigation -->
+    <nav class="header__nav" id="primary-nav" aria-label="Primary navigation">
+      <ul class="header__nav-list" role="list">
+        <li class="header__nav-item">
+          <a href="/" class="header__nav-link header__nav-link--active">Home</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="/pages/about.html" class="header__nav-link">About</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="/pages/services.html" class="header__nav-link">Services</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="/pages/contact.html" class="header__nav-link">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- CTA (populated after design review) -->
+    <div class="header__actions">
+      <button class="btn btn--primary" type="button">Get Started</button>
+    </div>
+
+    <!-- Mobile menu toggle -->
+    <button
+      class="header__menu-toggle"
+      type="button"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+      aria-label="Open menu"
+    >
+      <span class="header__hamburger" aria-hidden="true"></span>
+    </button>
+
+  </div>
+</header>

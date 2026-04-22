@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BambooPay — The Complete Merchant Payments Platform. Simplify payments, automate billing, and manage customers and inventory from one powerful platform." />
+
+  <title>BambooPay — Complete Merchant Payments Platform</title>
+
+  <!-- Design system + global styles -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- Fonts: SUSE (headlines) + Poppins (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUSE:wght@400;700&family=Poppins:wght@400;500;700&display=swap" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER — fixed, transparent over hero, solid on scroll
+       ============================================================ -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="/" class="header__brand" aria-label="BambooPay home">
+        <img
+          class="header__logo"
+          src="https://www.figma.com/api/mcp/asset/5ab74ca0-c631-4445-bb96-780683edf5fc"
+          alt="BambooPay"
+          width="203"
+          height="32"
+        />
+      </a>
+
+      <nav class="header__nav" id="primary-nav" aria-label="Primary navigation">
+        <ul class="header__nav-list" role="list">
+          <li><a href="/"                    class="header__nav-link header__nav-link--active">Home</a></li>
+          <li><a href="/pages/pricing.html"  class="header__nav-link">Pricing</a></li>
+          <li><a href="/pages/equipment.html" class="header__nav-link">Equipment</a></li>
+          <li><a href="/pages/solutions.html" class="header__nav-link">Payment Solutions</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="header__search" type="button" aria-label="Search">
+          <img
+            class="header__search-icon"
+            src="https://www.figma.com/api/mcp/asset/31a9d74c-3034-4f87-bd94-68b392083664"
+            alt=""
+            aria-hidden="true"
+            width="18"
+            height="18"
+          />
+        </button>
+
+        <a href="/login" class="header__login">Login</a>
+
+        <div class="header__lang" role="group" aria-label="Language">
+          <button class="header__lang-btn header__lang-btn--active" type="button" aria-pressed="true">EN</button>
+          <button class="header__lang-btn" type="button" aria-pressed="false">VI</button>
+        </div>
+      </div>
+
+      <button
+        class="header__menu-toggle"
+        type="button"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+        aria-label="Open menu"
+      >
+        <span class="header__hamburger" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main id="main-content">
+
+    <!-- HERO SECTION -->
+    <section class="hero" aria-label="Hero">
+
+      <!-- Decorative background grid pattern -->
+      <div class="hero__pattern" aria-hidden="true">
+        <img
+          class="hero__pattern-hori"
+          src="https://www.figma.com/api/mcp/asset/52210763-b08e-4884-8d64-3b74564cb4f2"
+          alt=""
+          loading="eager"
+        />
+        <img
+          class="hero__pattern-verti"
+          src="https://www.figma.com/api/mcp/asset/1aa85465-339e-4fde-9134-c50dfdb3921d"
+          alt=""
+          loading="eager"
+        />
+      </div>
+
+      <!-- Content: tag + heading + CTAs -->
+      <div class="hero__top">
+        <div class="hero__content">
+          <!-- Tag badge -->
+          <div class="hero__tag">
+            <img
+              class="hero__tag-dot"
+              src="https://www.figma.com/api/mcp/asset/d39d5215-d3d0-4b08-aae1-2a81f75bf09e"
+              alt=""
+              aria-hidden="true"
+              width="8"
+              height="8"
+            />
+            <span class="hero__tag-label">Payment Solutions</span>
+          </div>
+
+          <!-- Heading -->
+          <div class="hero__heading">
+            <h1 class="hero__title">The Complete Merchant</h1>
+            <p class="hero__title--accent">Payments Platform</p>
+            <p class="hero__subtitle">
+              Simplify payments, automate billing, and manage customers and inventory from one powerful platform.
+            </p>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="hero__actions">
+            <button class="hero__btn hero__btn--green" type="button">Explore Solutions</button>
+            <button class="hero__btn hero__btn--outline" type="button">See Platform Detail</button>
+          </div>
+        </div>
+
+        <!-- Desktop: 3-column staggered product cards -->
+        <div class="hero__cards" aria-label="Product highlights">
+          <!-- Card 1 — mobile payment -->
+          <div class="hero__cards-col">
+            <div class="hero__card-offset" style="height: 86px;"></div>
+            <div class="hero__card">
+              <img
+                class="hero__card-image"
+                src="https://www.figma.com/api/mcp/asset/325c0d4b-bfaf-4239-bab5-8f7f4660a80a"
+                alt="Mobile payment terminal"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Card 2 — Virtual Terminal (featured, with text) -->
+          <div class="hero__cards-col">
+            <div class="hero__card-offset" style="height: 157px;"></div>
+            <div class="hero__card">
+              <img
+                class="hero__card-image"
+                src="https://www.figma.com/api/mcp/asset/f861b430-5450-4ab8-99d4-01334dbc4451"
+                alt="Virtual Terminal interface"
+                loading="lazy"
+              />
+              <div class="hero__card-body">
+                <h3 class="hero__card-title">Virtual Terminal</h3>
+                <p class="hero__card-desc">Process browser-based payments, store customer profiles, manage products, and keep billing organized.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 — POS system -->
+          <div class="hero__cards-col">
+            <div class="hero__card-offset" style="height: 61px;"></div>
+            <div class="hero__card">
+              <img
+                class="hero__card-image"
+                src="https://www.figma.com/api/mcp/asset/52bfa9fe-ea68-4e41-bb2a-a5bd47ff5187"
+                alt="Point of sale system"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile: single card + dots -->
+        <div class="hero__slide">
+          <div class="hero__card">
+            <img
+              class="hero__card-image"
+              src="https://www.figma.com/api/mcp/asset/b1afd27a-2ea3-412c-b49b-224c79c5e927"
+              alt="Virtual Terminal interface"
+              loading="lazy"
+            />
+            <div class="hero__card-body">
+              <h3 class="hero__card-title">Virtual Terminal</h3>
+              <p class="hero__card-desc">Process browser-based payments, store customer profiles, manage products, and keep billing organized.</p>
+            </div>
+          </div>
+          <div class="hero__dots" aria-label="Slide indicators" aria-hidden="true">
+            <span class="hero__dot hero__dot--active"></span>
+            <span class="hero__dot"></span>
+            <span class="hero__dot"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features bar -->
+      <nav class="hero__features" aria-label="Platform features">
+        <ul class="hero__features-row" role="list">
+          <li class="hero__feature">
+            <img class="hero__feature-icon" src="https://www.figma.com/api/mcp/asset/14510145-0627-44d9-82a2-61d966277e99" alt="" aria-hidden="true" width="24" height="24" />
+            <span class="hero__feature-label">Virtual Terminal</span>
+          </li>
+          <li class="hero__feature">
+            <img class="hero__feature-icon" src="https://www.figma.com/api/mcp/asset/ce531bc1-734e-4ca6-afe9-d76dd9d7f8d7" alt="" aria-hidden="true" width="24" height="24" />
+            <span class="hero__feature-label">Recurring Billing</span>
+          </li>
+          <li class="hero__feature">
+            <img class="hero__feature-icon" src="https://www.figma.com/api/mcp/asset/606e142c-8fa6-4bc1-9176-68cad0e8c437" alt="" aria-hidden="true" width="24" height="24" />
+            <span class="hero__feature-label">Customer Manager</span>
+          </li>
+          <li class="hero__feature">
+            <img class="hero__feature-icon" src="https://www.figma.com/api/mcp/asset/8158ea41-0f03-4306-9c46-6f98f7adf366" alt="" aria-hidden="true" width="24" height="24" />
+            <span class="hero__feature-label">Product Manager</span>
+          </li>
+          <li class="hero__feature">
+            <img class="hero__feature-icon" src="https://www.figma.com/api/mcp/asset/36c0fd56-977c-482b-affe-2a1154a2f471" alt="" aria-hidden="true" width="24" height="24" />
+            <span class="hero__feature-label">Invoicing</span>
+          </li>
+          <li class="hero__feature">
+            <img class="hero__feature-icon" src="https://www.figma.com/api/mcp/asset/263f78f7-b9da-402c-8970-b74e33aae616" alt="" aria-hidden="true" width="24" height="24" />
+            <span class="hero__feature-label">Inventory Tools</span>
+          </li>
+          <li class="hero__feature">
+            <img class="hero__feature-icon" src="https://www.figma.com/api/mcp/asset/a6ddcea2-b0bb-4f95-b8be-5844b6d1a75b" alt="" aria-hidden="true" width="24" height="24" />
+            <span class="hero__feature-label">Account Updater</span>
+          </li>
+        </ul>
+      </nav>
+
+    </section>
+
+    <!-- Additional sections will be added here -->
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="footer__logo">BambooPay</a>
+        <p class="footer__tagline">The Complete Merchant Payments Platform.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <div class="footer__nav-group">
+          <h3 class="footer__nav-heading">Company</h3>
+          <ul class="footer__nav-list" role="list">
+            <li><a href="/pages/about.html"    class="footer__nav-link">About</a></li>
+            <li><a href="/pages/pricing.html"  class="footer__nav-link">Pricing</a></li>
+            <li><a href="/pages/contact.html"  class="footer__nav-link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__nav-group">
+          <h3 class="footer__nav-heading">Legal</h3>
+          <ul class="footer__nav-list" role="list">
+            <li><a href="#" class="footer__nav-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer__nav-link">Terms of Service</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="footer__social">
+        <a href="#" class="footer__social-link" aria-label="Twitter">TW</a>
+        <a href="#" class="footer__social-link" aria-label="LinkedIn">LI</a>
+        <a href="#" class="footer__social-link" aria-label="GitHub">GH</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p class="footer__copyright">&copy; <span id="footer-year"></span> BambooPay. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script type="module" src="assets/js/main.js"></script>
+
+</body>
+</html>

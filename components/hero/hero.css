@@ -1,0 +1,419 @@
+/* ==========================================================================
+   HERO COMPONENT
+   BEM: .hero, .hero__nav, .hero__content, .hero__cards, .hero__features
+   ========================================================================== */
+
+/* ------------------------------------------------------------------
+   Section wrapper
+------------------------------------------------------------------ */
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  padding: 128px 48px 40px; /* top accounts for fixed header (80px) + 48px breathing room */
+  background: linear-gradient(178.66deg, #041a6c 1.28%, #1b61e3 60.64%, rgba(27, 97, 227, 0) 97.03%);
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------------
+   Background grid pattern
+------------------------------------------------------------------ */
+
+.hero__pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1090px;
+  opacity: 0.8;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__pattern-hori {
+  position: absolute;
+  width: 1533px;
+  height: auto;
+  top: -160px;
+  left: -260px;
+  transform: rotate(-90deg);
+  transform-origin: center center;
+  opacity: 0.09;
+}
+
+.hero__pattern-verti {
+  position: absolute;
+  width: 1533px;
+  height: auto;
+  left: 47px;
+  top: 183px;
+  opacity: 0.09;
+}
+
+/* ------------------------------------------------------------------
+   Top grouping: content + cards
+------------------------------------------------------------------ */
+
+.hero__top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  padding-bottom: 64px;
+  width: 100%;
+}
+
+/* ------------------------------------------------------------------
+   Hero content: tag + heading + CTAs
+------------------------------------------------------------------ */
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  text-align: center;
+}
+
+/* Tag badge */
+.hero__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  background: #ffffff;
+  border: 1px solid #acceff;
+  border-radius: 16px;
+}
+
+.hero__tag-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.hero__tag-label {
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #6e7386;
+  white-space: nowrap;
+}
+
+/* Heading block */
+.hero__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 868px;
+  width: 100%;
+}
+
+.hero__title {
+  font-family: var(--font-family-display, 'SUSE', sans-serif);
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 72px;
+  color: #fefefe;
+  margin: 0;
+}
+
+.hero__title--accent {
+  font-family: var(--font-family-display, 'SUSE', sans-serif);
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 72px;
+  color: #e6f1ff;
+  margin: 0;
+}
+
+.hero__subtitle {
+  font-family: var(--font-family-display, 'SUSE', sans-serif);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  color: rgba(254, 254, 254, 0.7);
+  margin: 0;
+}
+
+/* CTA buttons */
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  min-width: 200px;
+  padding: 14px 32px;
+  border-radius: 24px;
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: filter var(--transition-fast), background var(--transition-fast);
+}
+
+.hero__btn--green {
+  background: #2ace64;
+  color: #fefefe;
+}
+
+.hero__btn--green:hover {
+  filter: brightness(1.08);
+}
+
+.hero__btn--outline {
+  background: transparent;
+  border: 1px solid #e7e7eb;
+  color: #e7e7eb;
+}
+
+.hero__btn--outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ------------------------------------------------------------------
+   Product cards (desktop: 3 staggered columns)
+------------------------------------------------------------------ */
+
+.hero__cards {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -64px; /* cards overflow into next section slightly */
+}
+
+.hero__cards-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__card-offset {
+  flex-shrink: 0;
+}
+
+.hero__card {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background: rgba(230, 241, 255, 0.8);
+  border: 1px solid #68a2ff;
+  border-radius: 32px;
+  overflow: hidden;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__card-image {
+  display: block;
+  width: 100%;
+  height: 312px;
+  object-fit: cover;
+  border-radius: 24px;
+  flex-shrink: 0;
+}
+
+.hero__card-body {
+  padding: 8px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hero__card-title {
+  font-family: var(--font-family-display, 'SUSE', sans-serif);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #21273d;
+  margin: 0;
+}
+
+.hero__card-desc {
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #6e7386;
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------
+   Mobile slide (single card + dots)
+   Hidden on desktop, shown on mobile
+------------------------------------------------------------------ */
+
+.hero__slide {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.hero__slide .hero__card-image {
+  height: 242px;
+  border-radius: 16px;
+}
+
+/* Pagination dots */
+.hero__dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: #b7b9c3;
+  flex-shrink: 0;
+  transition: width var(--transition-base), background var(--transition-base);
+}
+
+.hero__dot--active {
+  width: 32px;
+  background: #858899;
+}
+
+/* ------------------------------------------------------------------
+   Features bar
+------------------------------------------------------------------ */
+
+.hero__features {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__features-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  background: #e6f1ff;
+  border-radius: 24px;
+  padding: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  max-width: 1114px;
+  width: 100%;
+}
+
+.hero__features-row::-webkit-scrollbar {
+  display: none;
+}
+
+.hero__feature {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #fefefe;
+  border: 1px solid #acceff;
+  border-radius: 24px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.hero__feature-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.hero__feature-label {
+  font-family: var(--font-family-display, 'SUSE', sans-serif);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #6e7386;
+}
+
+/* ------------------------------------------------------------------
+   Responsive — mobile (< 1024px)
+------------------------------------------------------------------ */
+
+@media (max-width: 1023px) {
+  .hero {
+    padding: 112px 16px 40px; /* 64px header + 48px breathing room */
+    gap: 32px;
+  }
+
+  .hero__heading {
+    max-width: 100%;
+  }
+
+  .hero__title,
+  .hero__title--accent {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .hero__subtitle {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .hero__btn {
+    width: 100%;
+  }
+
+  /* Hide desktop 3-col cards, show mobile single slide */
+  .hero__cards {
+    display: none;
+  }
+
+  .hero__slide {
+    display: flex;
+  }
+
+  /* Smaller feature labels on mobile */
+  .hero__feature-label {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .hero__feature {
+    padding: 8px 12px;
+  }
+}

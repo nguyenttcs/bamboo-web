@@ -1,0 +1,76 @@
+<!-- ==========================================================================
+     FORM COMPONENT — reference / demo snippet
+     ========================================================================== -->
+
+<form class="form" novalidate>
+
+  <!-- Text input -->
+  <div class="form__group">
+    <label class="form__label" for="name">Full Name <span class="form__required" aria-hidden="true">*</span></label>
+    <input
+      class="form__input"
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Jane Smith"
+      autocomplete="name"
+      required
+    />
+    <span class="form__hint">Enter your legal name.</span>
+    <!-- Error state (add .form__input--error + show .form__error) -->
+    <span class="form__error" role="alert" hidden>This field is required.</span>
+  </div>
+
+  <!-- Email -->
+  <div class="form__group">
+    <label class="form__label" for="email">Email Address <span class="form__required" aria-hidden="true">*</span></label>
+    <input
+      class="form__input"
+      type="email"
+      id="email"
+      name="email"
+      placeholder="jane@example.com"
+      autocomplete="email"
+      required
+    />
+  </div>
+
+  <!-- Select -->
+  <div class="form__group">
+    <label class="form__label" for="topic">Topic</label>
+    <div class="form__select-wrapper">
+      <select class="form__select" id="topic" name="topic">
+        <option value="" disabled selected>Select a topic…</option>
+        <option value="general">General Inquiry</option>
+        <option value="support">Support</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Textarea -->
+  <div class="form__group">
+    <label class="form__label" for="message">Message</label>
+    <textarea
+      class="form__textarea"
+      id="message"
+      name="message"
+      rows="5"
+      placeholder="Your message…"
+    ></textarea>
+  </div>
+
+  <!-- Checkbox -->
+  <div class="form__group form__group--inline">
+    <input class="form__checkbox" type="checkbox" id="consent" name="consent" required />
+    <label class="form__label form__label--inline" for="consent">
+      I agree to the <a href="#">Terms of Service</a>.
+    </label>
+  </div>
+
+  <!-- Submit -->
+  <div class="form__actions">
+    <button class="btn btn--primary btn--full" type="submit">Send Message</button>
+  </div>
+
+</form>
